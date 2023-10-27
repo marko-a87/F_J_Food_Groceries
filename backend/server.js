@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import userRoutes from ".//routes/userRoutes.js";
+import adminRoutes from "../backend/routes/adminRoutes.js";
 import { connectDB } from "./database/db.js";
 
 //Loads the .env file(.env stores sensitive informative)
@@ -17,6 +18,7 @@ app.get("/", (res, req) => {
 connectDB();
 //Uses userRoutes from routes folder
 app.use("/", userRoutes);
+app.use("/", adminRoutes);
 
 //Sets the Port
 const PORT = process.env.PORT || 3000;
