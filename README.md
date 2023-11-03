@@ -57,21 +57,21 @@ This is where we store our POST, GET, UPDATE, DELETE requests for the client as 
 
 Models:
 
-Customer
+    Customer
 
-Product
+    Product
 
 Controllers:
 
-Cart
+    Cart
 
-Customer
+    Customer
 
-Product
+    Product
 
 Database:
 
-MongoDB
+    MongoDB
 
 # Programming language
 
