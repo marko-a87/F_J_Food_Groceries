@@ -7,9 +7,12 @@ F&J POPULAR MEATS AND GROCERY needs a website to meet different customers needs.
 # Software Architecture:
 
 This project uses the MVC software architecture pattern.
-Models- This represents the basic user information.
-Views - This renders and displays user information based on the models. This part does not handle the logic however.
-Controllers - This controls the logic for the user based on the model information. It listens to events from the views layer and executes the appropriate logic for that function.
+
+Models: This represents the basic user information.
+
+Views: This renders and displays user information based on the models. This part does not handle the logic however.
+
+Controllers: This controls the logic for the user based on the model information. It listens to events from the views layer and executes the appropriate logic for that function/
 
 # Project Setup
 
