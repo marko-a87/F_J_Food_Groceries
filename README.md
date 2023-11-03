@@ -70,8 +70,11 @@ MongoDB
 # Programming language
 
 JavaScript
+
 Nodejs(Javascript backend framework)
-Express
+
+Express(Application for handling http requests and response for node)
+
 Reactjs(Javascript frontend framework)
 
 # Developers:
