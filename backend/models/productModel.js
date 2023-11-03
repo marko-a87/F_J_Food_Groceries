@@ -6,8 +6,14 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  quantity: {
+  stock: {
     type: Number,
     required: true,
   },
 });
+
+//Creates a model for the product using the schema
+const Product = mongoose.model("Product", productSchema);
+
+//Makes the product model available to all the other files to be imported
+export default Product;

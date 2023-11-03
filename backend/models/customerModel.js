@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 //Creates a customer model using Schema
 const customerSchema = new mongoose.Schema({
-  name: {
+  username: {
     type: String,
     required: true,
   },
@@ -16,3 +16,9 @@ const customerSchema = new mongoose.Schema({
     required: true,
   },
 });
+
+//Creates a customer model
+const Customer = mongoose.model("Customer", customerSchema);
+
+//Makes the model available to all other files to be imported
+export default Customer;
