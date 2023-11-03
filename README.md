@@ -34,9 +34,9 @@ Following all these steps should allow you to have the project running locally o
 
 # Tips
 
--When you make a change locally to the project on the machine and want to push the code to Github, push it to a branch first instead of the main repository.
+When you make a change locally to the project on the machine and want to push the code to Github, push it to a branch first instead of the main repository.
 
--You're free to make changes as you please on the code from your local machine, but don't try to overwrite someone's code without asking first. If you think you have a better implementation try pushing it to the branch and we discuss whether or not to use which part.
+You're free to make changes as you please on the code from your local machine, but don't try to overwrite someone's code without asking first. If you think you have a better implementation try pushing it to the branch and we discuss whether or not to use which part.
 
 # Project folders description
 
@@ -56,15 +56,21 @@ routes:
 This is where we store our POST, GET, UPDATE, DELETE requests for the client as well as the different routes for the customer.
 
 Models:
+
 Customer
+
 Product
 
 Controllers:
+
 Cart
+
 Customer
+
 Product
 
 Database:
+
 MongoDB
 
 # Programming language
@@ -79,9 +85,14 @@ Reactjs(Javascript frontend framework)
 
 # Developers:
 
-Jemoi Johnson,
-Shamar Malcolm,
-Rhonaldo Foster,
-Hayden Byfield,
-Liandra Greyson,
+Jemoi Johnson
+
+Shamar Malcolm
+
+Rhonaldo Foster
+
+Hayden Byfield
+
+Liandra Greyson
+
 Joel Plummer
