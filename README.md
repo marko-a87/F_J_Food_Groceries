@@ -3,13 +3,13 @@
 Project Description:
 F&J POPULAR MEATS AND GROCERY needs a website to meet different customers needs. The website should be able to work on cross-platforms.
 
-Software Architecture:
+#Software Architecture:
 This project uses the MVC software architecture pattern.
 Models- This represents the basic user information.
 Views - This renders and displays user information based on the models. This part does not handle the logic however.
 Controllers - This controls the logic for the user based on the model information. It listens to events from the views layer and executes the appropriate logic for that function.
 
-Project Setup
+#Project Setup
 
 How to start the project from the backend:
 
@@ -36,7 +36,8 @@ Following all these steps should allow you to have the project running locally o
 
 -You're free to make changes as you please on the code from your local machine, but don't try to overwrite someone's code without asking first. If you think you have a better implementation try pushing it to the branch and we discuss whether or not to use which part.
 
-Project folders description
+#Project folders description
+
 package.json:
 This shows the dependencies installed to the project.
 
