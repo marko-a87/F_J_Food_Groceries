@@ -4,4 +4,3 @@ class Category:
         self.name = name
         self.description = description
         self.image = image
-        pass

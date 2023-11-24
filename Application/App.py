@@ -34,5 +34,6 @@ def main():
     JandJ_app.Customer.login()  # Login the customer
 
 
+"""Calls main function"""
 if __name__ == "__main__":
     main()
