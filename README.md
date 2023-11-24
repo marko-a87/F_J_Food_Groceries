@@ -8,42 +8,46 @@ A program that allows customers to order or choose delivery.
 
   Classes:
   
-    -App.py
+    App.py
   
   This runs the driver code for the application.
   
 # Customer Interface
-  -This is the presentation layer for the customers
-  -When a user presses a button it passes control the next layer
+
+  This is the presentation layer for the customers.
+  
+  When a user presses a button it passes control to the authentication layer.
 
 # Authentication layer
   Classes:
   
-    -Customer.py
-    -System_UI.py
+    Customer.py
+    System_UI.py
     
   Authenticates the customer based on credentials.
   
   Passes control to the database layer.
+  
   Passes control the Business_Logic layer once authenticated.
 
 # Business_Logic 
 
   Classes:
   
-    -Order.py
+    Order.py
     
-    -Product.py
+    Product.py
     
-    -Shopping_Cart.py
+    Shopping_Cart.py
     
-    -Category.py
+    Category.py
 
 # Data_mangement_security
 
   Classes:
   
-    -Database.py
+    Database.py
 
   Holds user data and secures it.
+  
   Passes control back to authentication.
