@@ -1,15 +1,3 @@
-# Creates a customer for the database to store
-import os
-import sys
-
-# Get the directory of the current script
-script_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Append the parent directory to sys.path
-sys.path.append(os.path.dirname(script_dir))
-from Authentication.System_UI import System_UI
-
-
 class Customer:
     # initializes all class variables
     def __init__(self, user_name: str, password: str, email_address: str):
@@ -36,6 +24,25 @@ class Customer:
     # Checks user credentials against database
     def login(self):
         """If records from customer_type matches database then login"""
-        print("Logged in")
-        System_UI.verifyLogin(self.user_name, self.password)
-        """Otherwise throw a Invalid credentials error"""
+        if self.verifyLogin(self.user_name, self.password):
+            print("Logged in")
+            return True
+        else:
+            """Otherwise throw a Invalid credentials error"""
+            print("Invalid credentials")
+            print("Try again")
+            return False
+
+    # Verfies customer information based on whats stored in database
+    def verifyLogin(self, username, password):
+        # You can implement the code to verify customer login information here
+        """If login status is successful then return true"""
+        if "Shamar" in username and "gmail" in password:
+            return True
+        else:
+            return False
+
+
+client = Customer()
+client.register()
+status = client.login()
