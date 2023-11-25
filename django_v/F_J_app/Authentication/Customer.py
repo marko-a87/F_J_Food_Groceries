@@ -3,12 +3,10 @@
 
 class Customer:
     # initializes all class variables
-    def __init__(self, name, age, phone_number, email_address, delivery_address):
-        self.name = str(name)
-        self.age = int(age)
-        self.email_address = str(email_address)
-        self.phone_number = str(phone_number)
-        self.delivery_address = str(delivery_address)
+    def __init__(self, name: str, password: str, email_address: str):
+        self.name = name
+        self.password = password
+        self.email_address = email_address
 
     # Passes customer information to database
     def register():

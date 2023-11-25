@@ -2,7 +2,7 @@
 
 
 class Product:
-    def __init__(self, name, description, cost):
+    def __init__(self, name: str, description: str, cost: int):
         """Product class constructor"""
         self.name = str(name)
         self.description = str(description)
