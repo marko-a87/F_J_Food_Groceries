@@ -14,11 +14,11 @@ Project Structure:
 
 # Authentication
 
-    Allows customer to login,register and use the website.
+    Allows customer to login,register and use the website
 
 # Business_Logic
 
-    Allows cart functionality to take place, i.e add, remove and view.
+    Allows cart functionality to take place, i.e add, remove and view
 
 # Database
 
