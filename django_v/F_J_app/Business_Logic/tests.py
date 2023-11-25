@@ -30,6 +30,11 @@ class TestViewCart(TestCase):
         self.assertEqual(1, 1)
 
 
+class TestAddtoCart(TestCase):
+    def test_catalogue(self):
+        self.assertEqual(1, 1)
+
+
 class TestRemovefromCart(TestCase):
     def test_catalogue(self):
         self.assertEqual(1, 1)
