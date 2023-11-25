@@ -11,8 +11,7 @@ class Delivery:
         self.age = age
         self.email_address = email_address
         self.delivery_address = delivery_address
-        self.phone_number: phone_number
+        self.phone_number = phone_number
 
-    def deliveryData():
-        """Method stores delivery information"""
-        print("Save content in database")
+    def deliveryInfo():
+        """Method saves delivery information to database"""

@@ -8,12 +8,12 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(script_dir))
 
 # Import the classes into the application code.
-from Authentication.Customer import Customer
-from Authentication.System_UI import System_UI
-from Business_Logic.Category import Category
-from Business_Logic.Order import Order
-from Business_Logic.Product import Product
-from Data_management_Security import Database
+from F_J_app.Authentication.Customer import Customer
+from F_J_app.Authentication.System_UI import System_UI
+from F_J_app.Business_Logic.Category import Category
+from F_J_app.Business_Logic.Order import Order
+from F_J_app.Business_Logic.Product import Product
+from F_J_app.Database import Database
 
 
 class App:
