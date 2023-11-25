@@ -8,16 +8,16 @@ class Customer(models.Model):
     email_address = models.CharField(max_length=100)
 
 class Product(models.Model):
-    name= 
-    description = 
+    name=  models.CharField(max_length=50)
+    description = models.CharField(max_length=100)
     cost = 
 
 class Delivery(models.Model):
-    name = 
-    age = 
-    email_address =
-    delivery_address= 
-    phone_number = 
+    name = models.CharField(max_length=50)
+    age = models.PositiveIntegerField(int)
+    email_address = models.EmailField(True)
+    delivery_address= models.CharField(max_length=80)
+    phone_number = models.CharField(max_length=20)
 
 
 class Order(models.Model):

@@ -1,5 +1,5 @@
-import F_J_app.Authentication.Customer
-
-
 class Database:
-    """Stores user information"""
+    """Stores user information
+    Updates user information
+    Deletes user information
+    Reads user information"""
