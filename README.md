@@ -8,21 +8,21 @@ https://docs.djangoproject.com/en/4.2/
 
 Project Structure:
 
-Interface
+# Interface
 
     The visual part of the website which the customer can interact with
 
-Authentication
+# Authentication
 
-  Allows customer to login,register and use the website.
+    Allows customer to login,register and use the website.
 
-Business_Logic
+# Business_Logic
 
-  Allows cart functionality to take place, i.e add, remove and view.
+    Allows cart functionality to take place, i.e add, remove and view.
 
-Database
+# Database
 
-  Creates models and stores the customer information
+    Creates models and stores the customer information
 
 Note:
   For the test cases  in Business_Logic I wrote the base functions for us to test our code. To run the test cases, all you need to do is to type in the terminal:
