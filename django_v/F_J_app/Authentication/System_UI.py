@@ -2,7 +2,7 @@
 
 
 class System_UI:
-    def __init__(self, status: bool):
+    def __init__(self, status):
         self.status = status
 
     # Verfies customer information based on whats stored in database

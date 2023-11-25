@@ -2,14 +2,7 @@
 
 
 class Order:
-    def __init__(
-        self,
-        order_number: int,
-        date_ordered: str,
-        date_shipped: str,
-        status: bool,
-        customer_name: str,
-    ):
+    def __init__(self, order_number, date_ordered, date_shipped, status, customer_name):
         self.order_number = order_number
         self.date_ordered = date_ordered
         self.date_shipped = date_shipped
