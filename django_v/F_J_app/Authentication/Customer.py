@@ -1,3 +1,4 @@
+"""Use django.contrib.auth to authorize a customer"""
 class Customer:
     # initializes all class variables
     def __init__(self, user_name: str, password: str, email_address: str):
