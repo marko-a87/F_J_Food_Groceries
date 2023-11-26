@@ -17,7 +17,7 @@ class Product(models.Model):
 
 class Delivery(models.Model):
     name = models.CharField(max_length=50)
-    age = models.PositiveIntegerField(int)
+    age = models.PositiveIntegerField()
     email_address = models.EmailField(True)
     delivery_address = models.CharField(max_length=80)
     phone_number = models.CharField(max_length=20)
