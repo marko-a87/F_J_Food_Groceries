@@ -4,31 +4,33 @@ from django.db import models
 
 
 class Customer(models.Model):
+    name = models.CharField(max_length=50)
+    age = models.PositiveIntegerField(int)
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
     email_address = models.CharField(max_length=100)
+    def __str__(self):
+        return self.username
 
 
 class Product(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=100)
-    cost = models.IntegerField()
-
+    cost = 
 
 class Delivery(models.Model):
     name = models.CharField(max_length=50)
-    age = models.PositiveIntegerField()
+    age = models.PositiveIntegerField(int)
     email_address = models.EmailField(True)
     delivery_address = models.CharField(max_length=80)
     phone_number = models.CharField(max_length=20)
 
 
 class Order(models.Model):
-    order_number = models.IntegerField()
-    date_ordered = models.DateTimeField()
-    date_shipped = models.DurationField()
-    status = models.BooleanField()
-    customer_name = models.CharField(max_length=100)
+    order_number = 
+    date_ordered = 
+    date_shipped = 
+    status:  =
+    customer_name =
 
-
-# class Cart(models.Model):
+class Cart(models.Model):
