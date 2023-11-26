@@ -3,6 +3,8 @@ body {
     text-align: center;
     margin: 50px;
     font-size: 25px;
+    border: 1px;
+    border-style: solid;
 }
 
 button {
@@ -52,7 +54,7 @@ button:active{
     
 }
 .container1{
-    width: 1241px;
+    justify-content: center;
     height: 450px;
     border: 1px;
     border-style: solid;
@@ -62,3 +64,4 @@ button:active{
 #border{
     background-color: rgb(57, 119, 57);
 }
+
