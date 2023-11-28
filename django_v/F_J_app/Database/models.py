@@ -6,7 +6,7 @@ from django.urls import reverse
 
 class Customer(models.Model):
     name = models.CharField(max_length=50)
-    age = models.PositiveIntegerField(int)
+
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
     email_address = models.EmailField(max_length=100)
@@ -25,6 +25,7 @@ class Product(models.Model):
 
 
 class Delivery(models.Model):
+    age = models.PositiveIntegerField(default=0)
     email_address = models.EmailField(True)
     delivery_address = models.CharField(max_length=80)
     phone_number = models.CharField(max_length=20)
