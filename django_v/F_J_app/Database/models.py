@@ -27,7 +27,7 @@ class Delivery(models.Model):
 class Order(models.Model):
     order_number = models.IntegerField(int)
     date_ordered = models.DateField()
-    date_shipped = models.DateField
+    date_shipped = models.DateField()
     status  = models.BooleanField()
     customer_name =models.ForeignKey(Delivery, on_delete=models.CASCADE)
 
