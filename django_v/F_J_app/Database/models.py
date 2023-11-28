@@ -13,6 +13,9 @@ class Customer(models.Model):
     def __str__(self):
         return self.username
 
+    def register(self):
+        self.save()
+
 
 class Product(models.Model):
     name = models.CharField(max_length=50)
