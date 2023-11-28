@@ -1,13 +1,8 @@
 """Use django.contrib.auth to authorize a customer"""
-class Customer:
-    # initializes all class variables
-    def __init__(self, user_name: str, password: str, email_address: str):
-        self.user_name = user_name
-        self.password = password
-        self.email_address = email_address
 
-    def __init__(self):
-        """Empty constructor"""
+
+class Auth:
+    # initializes all class variables
 
     def register(self):
         """Method registers customer"""
@@ -42,8 +37,3 @@ class Customer:
             return True
         else:
             return False
-
-
-client = Customer()
-client.register()
-status = client.login()
