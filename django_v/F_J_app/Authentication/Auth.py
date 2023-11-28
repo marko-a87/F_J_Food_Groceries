@@ -63,7 +63,8 @@ class Auth:
             return False
 
 
-auth = Auth()
+"""Once the register button is called do this"""
+"""auth = Auth()
 auth.register()
 c = Customer(
     name=auth.name,
@@ -71,4 +72,8 @@ c = Customer(
     password=auth.password,
     email_address=auth.email_address,
 )
-c.save()
+c.save()"""
+
+
+"""Once the login button is called do this"""
+print(Customer.objects.all())
