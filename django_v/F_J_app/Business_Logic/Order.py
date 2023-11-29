@@ -1,29 +1,19 @@
 """Order class represents actions user can make with site"""
-
+import random
+from datetime import date
 
 class Order:
     def __init__(
         self,
-        order_number: int,
-        date_ordered: str,
-        date_shipped: str,
-        status: bool,
-        customer_name: str,
+        delivery: bool, #whether the order is delivery or not (pickup)
+        address: str, #address of the customer
+        cost: int
     ):
-        self.order_number = order_number
-        self.date_ordered = date_ordered
-        self.date_shipped = date_shipped
-        self.status = status
-        self.customer_name = customer_name
-
-    def PlaceOrder():
-        """Method places an order for customer"""
-        print("Order has been placed")
-
-    def CancelOrder():
-        """Method cancels an order for customer"""
-        print("Order has been canceled")
-
-    def ViewOrder():
-        """Method views the orders placed"""
-        print("Display order")
+        self.order_number = random.randomint(1000,9999)
+        self.date_ordered = date.today()
+        self.cost = cost
+        self.delivery=delivery
+        if delivery:
+            self.estimated_delivery = date.tomorrow().tomorrow()
+            self.address = address
+        self.estimated_pickup = date.today()
