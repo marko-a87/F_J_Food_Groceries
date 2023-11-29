@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 # Create models here
 
@@ -14,18 +15,17 @@ class Customer(models.Model):
         return self.username
 
     def register(self):
+        #       if(Customer.objects.filer())
         self.save()
 
     def isExists(self):
-        if Customer.objects.filter(email_address=self.email_address):
-            return True
-        return False
+        return Customer.objects.filter(email_address=self.email_address)
 
 
 class Product(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=100)
-    cost = models.FloatField()
+    cost = models.FloatField(default=0.0)
 
     def __str__(self):
         return self.name
@@ -41,13 +41,14 @@ class Delivery(models.Model):
     delivery_address = models.CharField(max_length=80)
     phone_number = models.CharField(max_length=20)
 
-    def deliveryInfo():
+    def deliveryInfo(self):
         """Method saves delivery information to database"""
+        self.save()
 
 
 class Order(models.Model):
-    order_number = models.BigIntegerField()
-    date_ordered = models.DateField()
+    order_number = models.BigIntegerField(default=0)
+    date_ordered = models.DateField(default=timezone.now)
     date_shipped = models.DateField()
     status = models.BooleanField()
     customer_name = models.ForeignKey(Delivery, on_delete=models.CASCADE)
