@@ -5,7 +5,6 @@ from django.urls import reverse
 
 
 class Customer(models.Model):
-    name = models.CharField(max_length=50)
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
     email_address = models.EmailField(max_length=100)
@@ -16,14 +15,24 @@ class Customer(models.Model):
     def register(self):
         self.save()
 
+    def isExists(self):
+        if Customer.objects.filter(email_address=self.email_address):
+            return True
+        return False
+
 
 class Product(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=100)
     cost = models.FloatField()
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.name
+
+    def AddtoCart():
+        """Adds an item to the shopping cart"""
+        print("Item added to cart")
 
 
 class Delivery(models.Model):
@@ -39,6 +48,19 @@ class Order(models.Model):
     date_shipped = models.DateField()
     status = models.BooleanField()
     customer_name = models.ForeignKey(Delivery, on_delete=models.CASCADE)
+
+    def PlaceOrder(self):
+        """Method places an order for customer"""
+        print("Order has been placed")
+        self.save()
+
+    def CancelOrder():
+        """Method cancels an order for customer"""
+        print("Order has been canceled")
+
+    def ViewOrder():
+        """Method views the orders placed"""
+        print("Display order")
 
 
 class Cart(models.Model):

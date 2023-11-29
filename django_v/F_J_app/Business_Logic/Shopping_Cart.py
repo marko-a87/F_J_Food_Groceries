@@ -22,6 +22,3 @@ class Shopping_Cart:
     def RemovefromCart():
         """Removes item from the cart"""
         print("Removes item from cart")
-
-
-print(Authentication.Customer.status)
