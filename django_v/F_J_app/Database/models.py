@@ -5,6 +5,7 @@ from django.urls import reverse
 
 
 class Customer(models.Model):
+    name = models.CharField(max_length=50)
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
     email_address = models.EmailField(max_length=100)
@@ -25,7 +26,6 @@ class Product(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=100)
     cost = models.FloatField()
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.name
@@ -40,6 +40,9 @@ class Delivery(models.Model):
     email_address = models.EmailField()
     delivery_address = models.CharField(max_length=80)
     phone_number = models.CharField(max_length=20)
+
+    def deliveryInfo():
+        """Method saves delivery information to database"""
 
 
 class Order(models.Model):
