@@ -1,16 +1,36 @@
-class Customer:
-    # initializes all class variables
-    def __init__(self, user_name: str, password: str, email_address: str):
-        self.user_name = user_name
-        self.password = password
-        self.email_address = email_address
+""""Use django.contrib.auth to authorize a customer"""
 
-    def __init__(self):
-        """Empty constructor"""
+"""
+
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "F_J_app.settings")
+"""
+
+import os
+import sys
+from django.conf import settings
+from django.core.wsgi import get_wsgi_application
+
+# Get the directory of the current script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Append the parent directory to sys.path
+sys.path.append(os.path.dirname(script_dir))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "F_J_app.settings")
+application = get_wsgi_application()
+
+
+from Database.models import Customer
+
+
+class Auth:
+    # initializes all class variables
+    def __init(self):
+        """Initializes empty constructor"""
+        print("Constructor initialized")
 
     def register(self):
         """Method registers customer"""
-        print("User registered")
+        self.name: str = input("Enter your full name:")
         self.user_name: str = input("Enter the username: ")
         self.password: str = input("Enter the password: ")
         self.email_address: str = input("Enter the email address: ")
@@ -43,6 +63,17 @@ class Customer:
             return False
 
 
-client = Customer()
-client.register()
-status = client.login()
+"""Once the register button is called do this"""
+"""auth = Auth()
+auth.register()
+c = Customer(
+    name=auth.name,
+    username=auth.user_name,
+    password=auth.password,
+    email_address=auth.email_address,
+)
+c.save()"""
+
+
+"""Once the login button is called do this"""
+print(Customer.objects.all())

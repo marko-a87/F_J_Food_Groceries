@@ -8,6 +8,4 @@ class Product:
         self.description = str(description)
         self.cost = float(cost)
 
-    def AddtoCart():
-        """Adds an item to the shopping cart"""
-        print("Item added to cart")
+    
