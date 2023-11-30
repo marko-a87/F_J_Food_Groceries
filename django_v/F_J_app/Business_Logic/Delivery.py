@@ -13,5 +13,4 @@ class Delivery:
         self.delivery_address = delivery_address
         self.phone_number = phone_number
 
-    def deliveryInfo():
-        """Method saves delivery information to database"""
+    
