@@ -9,7 +9,6 @@ sys.path.append(os.path.dirname(script_dir))
 
 # Import the classes into the application code.
 from F_J_app.Authentication.Customer import Customer
-from F_J_app.Authentication.System_UI import System_UI
 from F_J_app.Business_Logic.Category import Category
 from F_J_app.Business_Logic.Order import Order
 from F_J_app.Business_Logic.Product import Product
@@ -20,7 +19,6 @@ class App:
     # Creates instances of classes for the application
     def __init__(self):
         self.Customer = Customer()
-        self.System_ui = System_UI()
         self.Category = Category()
         self.Order = Order()
         self.Product = Product()

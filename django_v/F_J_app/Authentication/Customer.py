@@ -1,6 +1,7 @@
-class Customer:
+class Customer():
     # initializes all class variables
-    def __init__(self, user_name: str, password: str, email_address: str):
+    def __init__(self, name: str, user_name: str, password: str, email_address: str):
+        self.name = name
         self.user_name = user_name
         self.password = password
         self.email_address = email_address
