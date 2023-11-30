@@ -8,8 +8,4 @@ class Product:
         self.description = str(description)
         self.cost = float(cost)
 
-<<<<<<< HEAD
    
-=======
-    
->>>>>>> origin/django_testing
