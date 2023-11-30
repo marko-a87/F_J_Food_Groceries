@@ -1,5 +1,3 @@
 class Category:
-    def __init__(self, ID, name, description) -> None:
-        self.ID = ID
+    def __init__(self, name):
         self.name = name
-        self.description = description
