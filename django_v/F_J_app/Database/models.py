@@ -46,8 +46,8 @@ class Delivery(models.Model):
 
 
 class Order(models.Model):
-    order_number = models.BigIntegerField()
-    date_ordered = models.DateField()
+    order_number = models.BigIntegerField(default=0)
+    date_ordered = models.DateField(default = timezone.now)
     date_shipped = models.DateField()
     status = models.BooleanField()
     customer_name = models.ForeignKey(Delivery, on_delete=models.CASCADE)

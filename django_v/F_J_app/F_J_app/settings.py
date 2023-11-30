@@ -57,7 +57,7 @@ ROOT_URLCONF = "F_J_app.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ['../Interface/templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -79,7 +79,7 @@ WSGI_APPLICATION = "F_J_app.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "stored_data",
+        "NAME": "share_data",
         "USER": "root",
         "PASSWORD": "eXJzBeB46?yrBt?k",
         "HOST": "localhost",
@@ -128,3 +128,7 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
