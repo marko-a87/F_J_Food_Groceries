@@ -1,9 +1,7 @@
 from django.db import models
-from django.urls import reverse
 from django.utils import timezone
 
 # Create models here
-
 
 class Customer(models.Model):
     name = models.CharField(max_length=50)
@@ -14,21 +12,13 @@ class Customer(models.Model):
     def __str__(self):
         return self.username
 
-    def register(self):
-        #       if(Customer.objects.filer())
-        self.save()
-
-    def isExists(self):
-        return Customer.objects.filter(email_address=self.email_address)
+   
 
 
 class Product(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=100)
     cost = models.FloatField(default=0.0)
-
-    def __str__(self):
-        return self.name
 
 
 class Delivery(models.Model):
@@ -47,8 +37,7 @@ class Category:
         self.content_type = content_type
         self.product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
-    def productCategories(self):
-        self.save()
+   
 
 
 class Order(models.Model):
@@ -58,20 +47,7 @@ class Order(models.Model):
     status = models.BooleanField()
     customer_name = models.ForeignKey(Delivery, on_delete=models.CASCADE)
 
-    def PlaceOrder(self):
-        """Method places an order for customer"""
-        print("Order has been placed")
-        self.save()
-
-    def CancelOrder(self):
-        """Method cancels an order for customer"""
-        print("Order has been canceled")
-        self.delete()
-
-    def ViewOrder(self):
-        """Method views the orders placed"""
-        print("Display order")
-        self.objects.all().values()
+   
 
 
 class Cart(models.Model):
@@ -79,14 +55,4 @@ class Cart(models.Model):
     quantity = models.PositiveIntegerField(default=0)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return f"{self.quantity} + {self.product.name}"
-
-    def get_absolute_url(self):
-        return reverse("cart:cart_detail")
-
-    def AddtoCart(self):
-        """Adds an item to the shopping cart"""
-        print("Item added to cart")
-        cart = Cart(self.product, self.quantity, self.customer)
-        cart.save()
+    
