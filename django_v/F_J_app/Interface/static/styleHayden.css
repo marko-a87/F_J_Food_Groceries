@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    font-size: 25px;
+
+}
+
+button {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 400px;
+    font-size: 25px;
+    cursor: pointer;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    background-color: rgb(112, 202, 112);
+    color: black;
+    border-style: none;
+    
+}
+button:hover{
+    background-color: black;
+    color: rgb(120, 202, 120);
+}
+button:active{
+    opacity: 0.1;
+    transition: opacity 0.1s;
+}
+.FJimg{
+    margin-top: 0px;
+    height: 152px;
+    width: 380px;
+    object-fit: contain;
+    object-position: center;
+}
+.container{
+    justify-content: space-between;
+    display: flex;
+}
+.box{
+    width: 1350px;
+    height: 150px;
+    border: 1px;
+    border-style: solid;
+
+}
+#box1{
+    background-color: rgb(52, 238, 99);
+}
+#box4{
+    background-color: rgb(243, 154, 52);
+    
+}
+.container1{
+    justify-content: center;
+    height: 450px;
+    border: 1px;
+    border-style: solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#border{
+    background-color: rgb(57, 119, 57);
+}
+
