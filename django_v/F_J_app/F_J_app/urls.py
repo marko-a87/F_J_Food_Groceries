@@ -14,9 +14,38 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
+import os
+import sys
+from django.conf import settings
+from django.core.wsgi import get_wsgi_application
 
+# Get the directory of the current script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Append the parent directory to sys.path
+sys.path.append(os.path.dirname(script_dir))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "F_J_app.settings")
+application = get_wsgi_application()
+
+from django.contrib import admin
+from django.urls import path, include
+from F_J_app.views import Login as view
+from django.contrib.auth import views as auth
+from django.conf.urls.static import static
+from django.conf import settings
+from .import views
+ 
 urlpatterns = [
+ 
     path('admin/', admin.site.urls),
+ 
+    ##### user related path########################## 
+    path('', include('user.urls')),
+    path('login/', view.Login, name ='login'),
+    path('logout/', auth.LogoutView.as_view(template_name ='user/index.html'), name ='logout'),
+    path('register/', view.register, name ='register'),
 ]
+urlpatterns = [
+    path('', views.index, name ='index'), 
+]
+
