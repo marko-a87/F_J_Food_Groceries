@@ -30,10 +30,6 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-    def AddtoCart():
-        """Adds an item to the shopping cart"""
-        print("Item added to cart")
-
 
 class Delivery(models.Model):
     age = models.PositiveIntegerField(default=0)
@@ -43,6 +39,15 @@ class Delivery(models.Model):
 
     def deliveryInfo(self):
         """Method saves delivery information to database"""
+        self.save()
+
+
+class Category:
+    def __init__(self, content_type):
+        self.content_type = content_type
+        self.product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+    def productCategories(self):
         self.save()
 
 
@@ -58,13 +63,15 @@ class Order(models.Model):
         print("Order has been placed")
         self.save()
 
-    def CancelOrder():
+    def CancelOrder(self):
         """Method cancels an order for customer"""
         print("Order has been canceled")
+        self.delete()
 
-    def ViewOrder():
+    def ViewOrder(self):
         """Method views the orders placed"""
         print("Display order")
+        self.objects.all().values()
 
 
 class Cart(models.Model):
@@ -77,3 +84,9 @@ class Cart(models.Model):
 
     def get_absolute_url(self):
         return reverse("cart:cart_detail")
+
+    def AddtoCart(self):
+        """Adds an item to the shopping cart"""
+        print("Item added to cart")
+        cart = Cart(self.product, self.quantity, self.customer)
+        cart.save()
