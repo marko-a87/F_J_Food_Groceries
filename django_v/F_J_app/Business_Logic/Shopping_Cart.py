@@ -7,7 +7,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Append the parent directory to sys.path
 sys.path.append(os.path.dirname(script_dir))
-import Authentication.Customer
+
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
@@ -40,4 +40,4 @@ class Cart_Shop:
             messages.success(request, "This product has been removed")
         return redirect("cart:cart_view")
 
-    print(Authentication.Customer.status)
+   
