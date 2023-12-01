@@ -19,7 +19,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "F_J_app.settings")
 application = get_wsgi_application()
 
 
-from Database.models import Customer
+from Database.models import *
+from Database.Database import *
 
 
 class Auth:
@@ -74,6 +75,24 @@ c = Customer(
 )
 c.save()"""
 
+auth = Customer(
+    name=input("Enter customer name:"),
+    username=input("Enter customer username:"),
+    password=input("Enter customer password:"),
+    email_address=input("Enter customer email:"),
+)
+Storage = Database()
+
+Storage.register(auth)
+
+username = input("Enter username: ")
+password = input("Enter password")
+
+status = Storage.login(username, password)
+if status:
+    print("Logged in successfully")
+else:
+    print("Incorrect username or password")
 
 """Once the login button is called do this"""
-print(Customer.objects.all())
+print(Customer.objects.all().values())
