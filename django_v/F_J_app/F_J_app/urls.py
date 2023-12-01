@@ -22,6 +22,8 @@ from Authentication.views.Signup import Register
 from Authentication.views.Main import Main
 from Authentication.views.Delivery import Delivery
 from Authentication.views.Product import Product
+from Authentication.views.Signout import Signout
+from Authentication.views.Shopping_cart import Shopping_cart
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -31,6 +33,8 @@ urlpatterns = [
     path("main/", Main.as_view(), name="main"),
     path("delivery/", Delivery.as_view(), name="delivery"),
     path("product/", Product.as_view(), name="product"),
+    path("signout/", Signout.as_view(), name="signout"),
+    path("shopping_cart/", Shopping_cart.as_view(), name="shop_cart"),
 ]
 """
 <button class='box' id='b1' onclick="location.href='Main.html'">Home</button>
