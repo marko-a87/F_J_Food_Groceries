@@ -8,8 +8,7 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-
-<form method="post" action="{% url 'register' %}">
+<form method="post">
   {% csrf_token %}
   <div class="login-form">
     <button class="bkL" onclick=location.href='{% url "home" %}'>Back</button>
@@ -17,7 +16,7 @@
       <h1>Registration</h1>
       <div class="content">
         <div class="input-field">
-          <input type="text" name="username" placeholder="Enter new username" autocomplete="nope">
+          <input type="text" name ="username" placeholder="Enter new username" autocomplete="nope">
         </div>
         <div class="input-field">
           <input type="text" name= "password" placeholder="Enter new password" autocomplete="new-password">
@@ -25,14 +24,16 @@
         <div class="input-field">
           <input type="text" name = "email" placeholder="Confirm new email" autocomplete="new-email">
         </div>
+        <a href="login.html" class="link">Already Log in?</a>
       </div>
       <div class="action">
         <button>Register</button>
+        <button>Sign in</button>
       </div>
     </form>
   </div>
-
 </form>
+
 
 </body>
 </html>

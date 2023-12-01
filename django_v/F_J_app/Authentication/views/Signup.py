@@ -28,12 +28,13 @@ class Register(View):
         if storage.isExists(customer):
             return redirect(Register.return_url or "home")
         else:
+            customer.password = storage.hashPassword(customer.password)
             storage.register(customer)
             # Optionally, you can perform login after registration
-            status = storage.login(username, password)
+            status = storage.login(email, password)
             if status:
                 # Registration and login successful, redirect to the home page or the intended return_url
-                return redirect(Register.return_url or "home")
+                return redirect(Register.return_url or "main")
             else:
                 # Registration successful but login failed, you may want to display an error message or redirect to the login page
                 return render(

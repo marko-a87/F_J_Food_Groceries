@@ -68,6 +68,7 @@ class Database:
         # Retrieve the customer from the database based on the username
         try:
             customer = Customer.objects.get(email_address=email)
+
         except Customer.DoesNotExist:
             return False  # User does not exist
 

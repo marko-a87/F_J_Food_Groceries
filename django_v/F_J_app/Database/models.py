@@ -8,7 +8,7 @@ from django.utils import timezone
 
 class Customer(models.Model):
     username = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
+    password = models.CharField(max_length=128)
     email_address = models.EmailField(max_length=100)
 
 

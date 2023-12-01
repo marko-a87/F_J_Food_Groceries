@@ -6,12 +6,12 @@ from django.views import View
 from django.shortcuts import render, redirect, HttpResponseRedirect
 
 
-class Home(View):
+class Main(View):
     return_url = None
 
     def get(self, request):
-        Home.return_url = request.GET.get("return_url")
+        Main.return_url = request.GET.get("return_url")
         return render(
             request,
-            "home.html",
+            "Main.html",
         )

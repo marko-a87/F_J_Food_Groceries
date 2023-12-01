@@ -10,11 +10,11 @@
     
     <div class = Main.page>
         <div class = container>
-            <button class='box' id='b1' onclick="location.href='Main.html'">Home</button>
-            <button class='box' id='b2' onclick="location.href='product.html'">Product</button>
-            <button class='box' id='b3' onclick="location.href='delivery.html'">Delivery</button>
+            <button class='box' id='b1' onclick= location.href='{% url "main"%}'>Home</button>
+            <button class='box' id='b2' onclick=location.href='{% url "product"%}'>Product</button>
+            <button class='box' id='b3' onclick=location.href='{% url "delivery"%}'>Delivery</button>
             <button class='box' id='b4' onclick="location.href='#'">Pickup</button>
-            <button class='box' id='b5' onclick="location.href='home.html'">Signin</button>
+            <button class='box' id='b5' onclick=location.href='{% url "home"%}'>Signin</button>
             <button class='box' id='b6' onclick="location.href='signout.html'">SignOut</button>
         </div>
     </div>

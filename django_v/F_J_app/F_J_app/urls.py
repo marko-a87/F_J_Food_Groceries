@@ -19,10 +19,24 @@ from django.urls import path
 from Authentication.views.Home import Home
 from Authentication.views.Login import Login
 from Authentication.views.Signup import Register
+from Authentication.views.Main import Main
+from Authentication.views.Delivery import Delivery
+from Authentication.views.Product import Product
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", Home.as_view(), name="home"),
     path("login/", Login.as_view(), name="login"),
     path("register/", Register.as_view(), name="register"),
+    path("main/", Main.as_view(), name="main"),
+    path("delivery/", Delivery.as_view(), name="delivery"),
+    path("product/", Product.as_view(), name="product"),
 ]
+"""
+<button class='box' id='b1' onclick="location.href='Main.html'">Home</button>
+            <button class='box' id='b2' onclick="location.href='product.html'">Product</button>
+            <button class='box' id='b3' onclick="location.href='delivery.html'">Delivery</button>
+            <button class='box' id='b4' onclick="location.href='#'">Pickup</button>
+            <button class='box' id='b5' onclick="location.href='home.html'">Signin</button>
+            <button class='box' id='b6' onclick="location.href='signout.html'">SignOut</button>
+"""

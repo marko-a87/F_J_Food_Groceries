@@ -15,7 +15,6 @@ class Login(View):
             "login.html",
         )
 
-
     def post(self, request):
         email = request.POST.get("email")
         password = request.POST.get("password")
@@ -25,7 +24,8 @@ class Login(View):
 
         if status:
             # Login successful, redirect to the home page or the intended return_url
-            return redirect(Login.return_url or "home")
+            return redirect("main")
         else:
             # Login failed, you may want to display an error message or redirect to the login page
+            print("error")
             return render(request, "login.html", {"error": "Invalid credentials"})
