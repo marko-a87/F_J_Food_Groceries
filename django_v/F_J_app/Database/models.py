@@ -7,13 +7,9 @@ from django.utils import timezone
 
 
 class Customer(models.Model):
-    name = models.CharField(max_length=50)
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
     email_address = models.EmailField(max_length=100)
-
-    def __str__(self):
-        return self.username
 
 
 class Product(models.Model):
@@ -41,10 +37,6 @@ class Order(models.Model):
     amountpaid = models.IntegerField(blank=True, null=True)
 
     status = models.CharField(max_length=20, choices=STATUS_TYPE, default=ORDERED)
-
-    def deliveryInfo(self):
-        """Method saves delivery information to database"""
-        self.save()
 
 
 class Category:

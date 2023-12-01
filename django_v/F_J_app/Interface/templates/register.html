@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <div class="login-form">
-  <button class="bkR" onclick="location.href='home.html'">Back</button>
+  <button class="bkL" onclick=location.href='{% url "home" %}'>Back</button>
   <form>
     <h1>Registration</h1>
     <div class="content">
@@ -22,11 +22,9 @@
       <div class="input-field">
         <input type="email" placeholder="Confirm new email" autocomplete="new-email">
       </div>
-      <a href="login.html" class="link">Already Log in?</a>
     </div>
     <div class="action">
       <button>Register</button>
-      <button>Sign in</button>
     </div>
   </form>
 </div>

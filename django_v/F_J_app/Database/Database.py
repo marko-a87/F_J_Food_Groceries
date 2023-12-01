@@ -1,18 +1,10 @@
-import os
-import sys
-
-from django.core.wsgi import get_wsgi_application
-from django.urls import reverse
-
+import os, sys
 
 # Get the directory of the current script
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Append the parent directory to sys.path
 sys.path.append(os.path.dirname(script_dir))
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "F_J_app.settings")
-application = get_wsgi_application()
-
 from Database.models import *
 
 
@@ -31,13 +23,6 @@ class Database:
 
     def isExists(self, customer: object):
         return Customer.objects.filter(email_address=customer.email_address)
-
-    def login(self, username: str, password: str):
-        # Method returns a status when user puts in login credentials
-        if Customer.objects.filter(username=username, password=password):
-            return True
-        else:
-            return False
 
     def __str__(self):
         return self.name
@@ -72,3 +57,33 @@ class Database:
         print("Item added to cart")
         cart = Cart(Cart.product, Cart.quantity, Cart.customer)
         cart.save()
+
+    def hashPassword(self, password):
+        hashed_pwd = make_password(password)
+        return hashed_pwd
+
+    def login(self, username: str, entered_password: str):
+        # Retrieve the customer from the database based on the username
+        try:
+            customer = Customer.objects.get(username=username)
+        except Customer.DoesNotExist:
+            return False  # User does not exist
+
+        # Check if entered_password matches the stored hashed password
+        return check_password(entered_password, customer.password)
+
+
+storage = Database()
+
+customer = Customer(
+    username=input("Enter a username:"),
+    password=storage.hashPassword(input("Enter a password")),
+    email_address=input("Enter a email address"),
+)
+
+storage.register(customer)
+status = storage.login(input("Enter the username:"), input("Enter the password:"))
+if status:
+    print("Logged in successfully")
+else:
+    print("Not logged in")
