@@ -73,7 +73,7 @@ c = Customer(
     password=auth.password,
     email_address=auth.email_address,
 )
-c.save()"""
+c.save()""" """
 
 auth = Customer(
     name=input("Enter customer name:"),
@@ -94,5 +94,6 @@ if status:
 else:
     print("Incorrect username or password")
 
-"""Once the login button is called do this"""
+Once the login button is called do this
 print(Customer.objects.all().values())
+"""

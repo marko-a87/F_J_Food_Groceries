@@ -8,27 +8,31 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="login-form">
-  <button class="bkL" onclick=location.href='{% url "home" %}'>Back</button>
-  <form>
-    <h1>Registration</h1>
-    <div class="content">
-      <div class="input-field">
-        <input type="username" placeholder="Enter new username" autocomplete="nope">
-      </div>
-      <div class="input-field">
-        <input type="password" placeholder="Enter new password" autocomplete="new-password">
-      </div>
-      <div class="input-field">
-        <input type="email" placeholder="Confirm new email" autocomplete="new-email">
-      </div>
-    </div>
-    <div class="action">
-      <button>Register</button>
-    </div>
-  </form>
-</div>
 
+<form method="post" action="{% url 'register' %}">
+  {% csrf_token %}
+  <div class="login-form">
+    <button class="bkL" onclick=location.href='{% url "home" %}'>Back</button>
+    <form>
+      <h1>Registration</h1>
+      <div class="content">
+        <div class="input-field">
+          <input type="text" name="username" placeholder="Enter new username" autocomplete="nope">
+        </div>
+        <div class="input-field">
+          <input type="text" name= "password" placeholder="Enter new password" autocomplete="new-password">
+        </div>
+        <div class="input-field">
+          <input type="text" name = "email" placeholder="Confirm new email" autocomplete="new-email">
+        </div>
+      </div>
+      <div class="action">
+        <button>Register</button>
+      </div>
+    </form>
+  </div>
+
+</form>
 
 </body>
 </html>

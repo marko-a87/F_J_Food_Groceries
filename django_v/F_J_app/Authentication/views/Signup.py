@@ -25,18 +25,19 @@ class Register(View):
         # Perform registration using the Database class or any other registration mechanism
         storage = Database()
         customer = Customer(username=username, password=password, email_address=email)
-        storage.register(customer)
-
-        # Optionally, you can perform login after registration
-        status = storage.login(username, password)
-
-        if status:
-            # Registration and login successful, redirect to the home page or the intended return_url
+        if storage.isExists(customer):
             return redirect(Register.return_url or "home")
         else:
-            # Registration successful but login failed, you may want to display an error message or redirect to the login page
-            return render(
-                request,
-                "login.html",
-                {"error": "Registration successful, but login failed"},
-            )
+            storage.register(customer)
+            # Optionally, you can perform login after registration
+            status = storage.login(username, password)
+            if status:
+                # Registration and login successful, redirect to the home page or the intended return_url
+                return redirect(Register.return_url or "home")
+            else:
+                # Registration successful but login failed, you may want to display an error message or redirect to the login page
+                return render(
+                    request,
+                    "login.html",
+                    {"error": "Registration successful, but login failed"},
+                )
