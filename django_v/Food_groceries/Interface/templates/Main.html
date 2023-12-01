@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/styleMain.css">
+</head>
+<body>
+    
+    <div class = Main.page>
+        <div class = container>
+            <button class='box' id='b1' onclick= location.href='{% url "main"%}'>Home</button>
+            <button class='box' id='b2' onclick=location.href='{% url "product"%}'>Product</button>
+            <button class='box' id='b3' onclick=location.href='{% url "delivery"%}'>Delivery</button>
+            <button class='box' id='b4' onclick="location.href='#'">Pickup</button>
+            <button class='box' id='b5' onclick=location.href='{% url "home"%}'>Signin</button>
+            <button class='box' id='b6' onclick="location.href='signout.html'">SignOut</button>
+        </div>
+    </div>
+    <div class='Wrapper-main'>
+        <h1>Welcome to F&J's Website</h1>
+        <img src='../static/Screenshot 2023-11-25 201549.png'>
+        <div class='tit'>
+            <h1>Home Page</h1>
+        </div>
+        <p class='about'><I>F&J Popular Meats & Grocery is a full-service retail merchant of fine meats and grocery in
+            Clarendon. We distinguish ourself from the competition by following the best practices of the wholesale/retail category leaders, with particular emphasis on excellent customer service, a broad selection of quality inventory, and competitive pricing.
+            
+            Who are We?
+            Welcome to F&J Popular Meats and Grocery, where culinary excellence meets convenience. Nestled at the heart of May Pen, Clarendon, we take immense pride in being more than just a typical meat and grocery shop. Since our inception, we have been committed to providing an exceptional shopping experience that caters to both discerning food enthusiasts and families looking for high-quality provisions.
+             
+            At F&J Popular Meats and Grocery, we believe that food is an integral part of life's greatest moments. Our carefully curated selection boasts an array of premium meats, sourced from trusted suppliers who share our passion for quality. Whether you're seeking the perfect cut for a special occasion or fresh ingredients for your daily meals, our meat collection is bound to delight your taste buds and elevate your culinary ventures.
+             
+            But we're more than just a meat haven – our grocery section is thoughtfully stocked to meet all your culinary needs. From farm-fresh produce to pantry staples, artisanal cheeses to gourmet delights, we offer a diverse range of products to cater to various tastes and preferences. We are designed to inspire creativity in the kitchen and to make every meal a memorable experience.
+             
+            What truly sets us apart is our commitment to personalized service. Our knowledgeable staff is here to guide you through your choices, offer cooking tips, and help you discover new flavors. We understand that each customer has a unique vision for their meals, and we're dedicated to helping you bring that vision to life.
+             
+            Join us at F&J Popular Meats and Grocery to embark on a culinary journey that celebrates food in all its glory. Whether you're a seasoned chef, a home cook, or simply someone who appreciates the joy of a well-prepared meal, we invite you to explore our store and discover the finest in meats and groceries that will make every dish a masterpiece.
+         </I></p>
+    </div>
+    <button class='Catalogue' onclick="location.href='product.html'">Browse Catalogue</button>
+    
+</body>
+</html>

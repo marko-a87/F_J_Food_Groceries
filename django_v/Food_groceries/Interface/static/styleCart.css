@@ -1,0 +1,65 @@
+body{
+    background-image: linear-gradient(90deg,rgb(45, 196, 45),rgb(247, 177, 48));
+    height: 1000vh;
+    text-align: center;
+}
+.carttab{
+    width: 400px;
+    height: 650px;
+    background-color: #353432;
+    color: #ffffff;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: 0.5s;
+}
+.h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.btn button{
+    background-color: orange;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+.close{
+    background-color: #eee;
+}
+.item img{
+    width: 100%;
+}
+.item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.quan span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.quan span:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+}
+.item:nth-child(even){
+    background-color: #0001;
+}
+.listcart{
+    overflow: auto;
+}
+.listcart::-webkit-scrollbar{
+    width: 0;
+}

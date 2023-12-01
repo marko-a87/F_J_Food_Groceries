@@ -73,7 +73,7 @@ c = Customer(
     password=auth.password,
     email_address=auth.email_address,
 )
-c.save()"""
+c.save()""" """
 
 
 def main():
@@ -92,6 +92,6 @@ def main():
     else:
         print("Not logged in")
 
-
-if __name__ == "__main__":
-    main()
+Once the login button is called do this
+print(Customer.objects.all().values())
+"""

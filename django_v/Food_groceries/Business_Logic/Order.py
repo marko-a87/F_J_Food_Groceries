@@ -1,29 +1,47 @@
-"""Order class represents actions user can make with site"""
+"""
+
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "F_J_app.settings")
+"""
+
+import os
+import sys
+from django.conf import settings
+from django.core.wsgi import get_wsgi_application
+
+# Get the directory of the current script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Append the parent directory to sys.path
+sys.path.append(os.path.dirname(script_dir))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "F_J_app.settings")
+application = get_wsgi_application()
 
 
-class Order:
-    def __init__(
-        self,
-        order_number: int,
-        date_ordered: str,
-        date_shipped: str,
-        status: bool,
-        customer_name: str,
-    ):
-        self.order_number = order_number
-        self.date_ordered = date_ordered
-        self.date_shipped = date_shipped
-        self.status = status
-        self.customer_name = customer_name
+# Get the directory of the current script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
+from Database.models import Cart,Order, Product, cartItem,OrderList
+from Business_Logic.Shopping_Cart import Cart_Shop
 
-    def PlaceOrder():
-        """Method places an order for customer"""
-        print("Order has been placed")
+class shopOrder:
+    def vieworder(request):
+        cart = Cart(request)
+        if request.method == 'POST':
+            name = request.POST.get("name")
+            age = request.POST.get("age")
+            phone_number = request.POST.get("phone_number")
+            email_address = request.POST.get("email_address")
+            delivery_address = request.POST.get("delivery_address")
+        
+            order = Order.objects.create(customer = request.customer, name=name, age=age, phone_number= phone_number, email_address=email_address, delivery_address= delivery_address)
 
-    def CancelOrder():
-        """Method cancels an order for customer"""
-        print("Order has been canceled")
+            for thing in cart:
+                product = thing['product']
+                quantity = int(thing['quantity'])
+                price = product.price * quantity
 
-    def ViewOrder():
-        """Method views the orders placed"""
-        print("Display order")
+                thing = OrderList.objects.create(order=order, product=product, price=price)
+            return redirect("orders.html")
+        return redirect("cart.html")

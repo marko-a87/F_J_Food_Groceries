@@ -6,24 +6,24 @@ body {
 
 }
 
-button {
+.but {
     padding-top: 30px;
     padding-bottom: 30px;
     width: 400px;
     font-size: 25px;
     cursor: pointer;
-    margin-top: 150px;
+    margin-top: 110px;
     margin-bottom: 150px;
     background-color: rgb(112, 202, 112);
     color: black;
     border-style: none;
     
 }
-button:hover{
+.but:hover{
     background-color: black;
     color: rgb(120, 202, 120);
 }
-button:active{
+.but:active{
     opacity: 0.1;
     transition: opacity 0.1s;
 }
@@ -60,6 +60,22 @@ button:active{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+.return{
+    text-align: center;
+    margin-right: 1300px;
+    font-size: 35x;
+    background-color: rgb(112, 202, 112);
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    border-style: none;
+    width: 6%;
+  }
+  .return:active{
+    opacity: 0.5;
+    transition: opacity 0.1s ;
+  }
 #border{
     background-color: rgb(57, 119, 57);
 }

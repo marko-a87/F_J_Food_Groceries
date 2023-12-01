@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "Database",
     "Interface",
-    "F_J_app",
+    "Authentication",
     "Business_Logic",
 ]
 

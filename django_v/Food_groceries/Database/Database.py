@@ -3,7 +3,16 @@ from django.contrib.auth.hashers import make_password, check_password
 
 
 # Get the directory of the current script
+<<<<<<< HEAD:django_v/Food_groceries/Database/Database.py
+=======
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Append the parent directory to sys.path
+sys.path.append(os.path.dirname(script_dir))
+
+>>>>>>> functionalities:django_v/F_J_app/Database/Database.py
 from Database.models import *
+from django.contrib.auth.hashers import make_password, check_password
 
 
 class Database:
@@ -69,15 +78,35 @@ class Database:
         hashed_pwd = make_password(password)
         return hashed_pwd
 
-    def login(self, username: str, entered_password: str):
+    def login(self, email: str, entered_password: str):
         # Retrieve the customer from the database based on the username
         try:
-            customer = Customer.objects.get(username=username)
+            customer = Customer.objects.get(email_address=email)
+
         except Customer.DoesNotExist:
             return False  # User does not exist
 
         # Check if entered_password matches the stored hashed password
         return check_password(entered_password, customer.password)
 
+<<<<<<< HEAD:django_v/Food_groceries/Database/Database.py
     def matchPasswords(self, entered_password, hashed_password):
         return check_password(entered_password, hashed_password)
+=======
+
+"""
+storage = Database()
+
+customer = Customer(
+    username=input("Enter a username:"),
+    password=storage.hashPassword(input("Enter a password")),
+    email_address=input("Enter a email address"),
+)
+
+storage.register(customer)
+status = storage.login(input("Enter the username:"), input("Enter the password:"))
+if status:
+    print("Logged in successfully")
+else:
+    print("Not logged in")"""
+>>>>>>> functionalities:django_v/F_J_app/Database/Database.py

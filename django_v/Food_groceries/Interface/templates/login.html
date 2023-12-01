@@ -8,23 +8,27 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="login-form">
-  <button class="bkL" onclick= location.href='{% url "home" %}'>Back</button>
-  <form>
-    <h1>Login</h1>
-    <div class="content">
-      <div class="input-field">
-        <input type="email" placeholder="Email" autocomplete="nope">
+<form method = post>
+  {% csrf_token %}
+  <div class="login-form">
+    <button class="bkL" onclick=location.href='{% url "home" %}'>Back</button>
+    <form>
+      <h1>Login</h1>
+      <div class="content">
+        <div class="input-field">
+          <input type="text" name = "email" placeholder="Email" autocomplete="nope">
+        </div>
+        <div class="input-field">
+          <input type= "text" name = "password" placeholder="Password" autocomplete="new-password">
+        </div>
       </div>
-      <div class="input-field">
-        <input type="password" placeholder="Password" autocomplete="new-password">
+      <div class="action">
+        <button>Sign in</button>
       </div>
-    </div>
-    <div class="action">
-      <button>Sign in</button>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
+</form>
+
 
 
 </body>
