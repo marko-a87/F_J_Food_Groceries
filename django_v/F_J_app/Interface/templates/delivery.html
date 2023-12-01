@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/styleDelivery.css">
+</head>
+<body>
+    
+    <div class = Main.page>
+        <div class = container>
+            <button class='box' id='b1' onclick="location.href='Main.html'">Home</button>
+            <button class='box' id='b2' onclick="location.href='product.html'">Product</button>
+            <button class='box' id='b3' onclick="location.href='delivery.html'">Delivery</button>
+            <button class='box' id='b4' onclick="location.href='#'">Pickup</button>
+            <button class='box' id='b5' onclick="location.href='home.html'">Signin</button>
+            <button class='box' id='b6' onclick="location.href='signout.html'">SignOut</button>
+        </div>
+        <header>
+            <h1>Delivery Page</h1>
+        </header>
+        <div class="container1">
+            <form>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+        
+              <label for="address">Address:</label>
+              <textarea id="address" name="address" rows="4" required></textarea>
+        
+              <label for="city">City:</label>
+              <input type="text" id="city" name="city" required>
+        
+              <label for="zipcode">Zip Code:</label>
+              <input type="text" id="zipcode" name="zipcode" required>
+        
+              <label for="deliveryOption">Delivery Option:</label>
+              <select id="deliveryOption" name="deliveryOption" required>
+                <option value="standard">Standard</option>
+                <option value="express">Express</option>
+              </select>
+        
+              <button class='btn' type="submit">Place Order</button>
+            </form>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
