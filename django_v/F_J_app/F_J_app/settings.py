@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "Database",
-    "Authentication",
     "Interface",
+    "F_J_app",
+    "Business_Logic",
 ]
 
 MIDDLEWARE = [
