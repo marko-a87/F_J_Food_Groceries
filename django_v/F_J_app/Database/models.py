@@ -26,11 +26,10 @@ class Product(models.Model):
 class Order(models.Model):
     ORDERED = "ordered"
     SHIPPED = "shipped"
-    STATUS_TYPE = (
-        (ORDERED, "Ordered"), 
-        (SHIPPED, "Shipped")
+    STATUS_TYPE = ((ORDERED, "Ordered"), (SHIPPED, "Shipped"))
+    customer = models.ForeignKey(
+        Customer, related_name="orders", blank=True, null=True, on_delete=models.CASCADE
     )
-    customer = models.ForeignKey(Customer, related_name="orders", blank=True, null=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     age = models.PositiveIntegerField(default=0)
     phone_number = models.CharField(max_length=20)
@@ -39,7 +38,7 @@ class Order(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     paid = models.BooleanField(default=False)
-    amountpaid= models.IntegerField(blank= True, null= True)
+    amountpaid = models.IntegerField(blank=True, null=True)
 
     status = models.CharField(max_length=20, choices=STATUS_TYPE, default=ORDERED)
 
@@ -56,7 +55,9 @@ class Category:
 
 class OrderList(models.Model):
     order = models.ForeignKey(Order, related_name="products", on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, related_name="products", on_delete=models.CASCADE)
+    product = models.ForeignKey(
+        Product, related_name="products", on_delete=models.CASCADE
+    )
     price = models.IntegerField()
     quantity = models.IntegerField(default=1)
 
@@ -66,8 +67,10 @@ class cartItem(models.Model):
     quantity = models.PositiveIntegerField(default=0)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
 
+
 class Cart(models.Model):
     customer = models.OneToOneField(Customer, on_delete=models.CASCADE)
-    products = models.ManyToManyField(Product, through="cartItem")
+    products = models.ManyToManyField(cartItem)
 
-Customer.cart=property(lambda u:Cart.objects.get_or_create(customer=u)[0])
+
+Customer.cart = property(lambda u: Cart.objects.get_or_create(customer=u)[0])
