@@ -1,0 +1,218 @@
+body{
+    background-image: linear-gradient(90deg,rgb(45, 196, 45),rgb(247, 177, 48));
+    height: 1000vh;
+}
+.productpage{
+    transition: transform 0.5s;
+}
+.box {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 150px;
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-style: none;
+}
+.box1{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 10px;
+    background-color:rgb(28, 28, 241);
+    color: rgb(255, 255, 255);
+    border-style: none;
+    border-radius: 5px;
+}
+.container{
+    justify-content: left;
+    display: flex;
+}
+.box1:hover,
+.box:hover{
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+.box1:active,
+.box:active{
+    opacity: 0.1;
+    transition: opacity 0.1s;
+}
+#b6{
+    inset: 0 0 0 auto;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    width: 60px;
+    height: 40px;
+    font-size: 12px;
+}
+#b5{
+    margin-left: 550px;
+    inset: 0 0 0 auto;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    width: 60px;
+    height: 40px;
+    font-size: 12px;
+}
+.tit{
+    color: antiquewhite;
+    font-size: 30px;
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: 20px;
+    background: url(Fj\ food\ pic.jpg) center no-repeat;
+}
+.cartb{
+    display: flex;
+    justify-content: right;
+    text-align: right ;
+    transition: 0.5s;
+}
+.fbox{
+    background-image: linear-gradient(90deg,rgb(247, 177, 48),rgb(45, 196, 45));
+    width: 85%;
+    border: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: black;
+    color: antiquewhite;
+    font-size: 30px;
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: 20px;
+    margin-top: 30px;
+}
+.views{
+    border: 1px;
+    border-radius: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 80px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-style: none;
+}
+.views:hover{
+    background-color: rgb(110, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.view:active{
+    opacity: 0.1;
+    transition: opacity 0.1s;
+}
+.image{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+.count{
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+.container1{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.items{
+    margin-top: 5px;
+    margin-right: 10px;
+    display: grid;
+    justify-content: center;
+}
+
+#f1{
+    width: 200px;
+    height: 200px;
+    border: 1px;
+    border-style: solid;
+    border-width: 5px;
+    color: rgb(255, 255, 255);
+}
+.Item_name{
+    font-weight: 800;
+    font-size: 20px;
+    text-align: center;
+}
+.pric{
+    text-align: center;
+}
+.carttab{
+    width: 400px;
+    background-color: #353432;
+    color: #ffffff;
+    position: fixed;
+    inset: 0 -400 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: 0.5s;
+}
+body.carttab{
+    inset: 0 0 0 auto;
+}
+body.showCart.productpage{
+    transform: translateX(-250px);
+}
+.h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.btn button{
+    background-color: orange;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+.close{
+    background-color: #eee;
+}
+.item img{
+    width: 100%;
+}
+.item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.quan span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.quan span:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+}
+.item:nth-child(even){
+    background-color: #0001;
+}
+.listcart{
+    overflow: auto;
+}
+.listcart::-webkit-scrollbar{
+    width: 0;
+}
+
+
+
